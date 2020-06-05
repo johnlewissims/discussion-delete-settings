@@ -39,7 +39,7 @@ class DiscussionPolicy extends AbstractPolicy
         array_push($arr, $tag->name);
       }
       if (
-        in_array("Feature Discussion", $arr)
+        in_array("Classifieds", $arr)
         && $discussion->user_id == $actor->id
         && (! $discussion->hidden_at || $discussion->hidden_user_id == $actor->id)
         && $actor->can('reply', $discussion)
