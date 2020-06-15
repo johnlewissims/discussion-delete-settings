@@ -9,7 +9,6 @@ app.initializers.add('remove-image-markdown-toolbar', () => {
             if(user.data.id == 1 || user.data.id == 5 || user.data.id == 6 || user.data.id == 7) {
               item.attrs.className = 'item-delete reveal'
             }
-            //console.log(user.data)
           }
         });
 
