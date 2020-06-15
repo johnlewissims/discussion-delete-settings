@@ -5,7 +5,7 @@
  *
  * Copyright (c) 2020 John Lewis Sims.
  *
- * For the full copyright and license information, please view the LICENSE.md
+ * For the full copyright and license informati on, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -13,6 +13,8 @@ namespace Ejin\DiscussionDeleteSettings;
 
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
+use Flarum\Api\Event\Serializing;
+use Ejin\DiscussionDeleteSettings\Serializers\IsAdminSerializer;
 
 return [
     (new Extend\Frontend('forum'))
@@ -25,4 +27,5 @@ return [
     function (Dispatcher $events) {
         $events->subscribe(Access\DiscussionPolicy::class);
     },
+    new IsAdminSerializer(),
 ];
